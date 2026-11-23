@@ -34,7 +34,7 @@ def protocol() -> dict:
         "invariants": ["Only the current coordinator advances stages", "Worker reports require independent acceptance",
                        "Do not bypass CLI by editing state or using hc for team coordination",
                        "Retain existing project rules and unrelated dirty files",
-                       "Unknown delivery means reconcile, never duplicate launch", "SC evidence must identify the actual deployed version",
+                       "Unknown delivery means reconcile, never duplicate launch", "sc环境 evidence must identify the actual deployed version",
                        "No daemon or automatic model wake-up; preserve checkpoint and resume coordination after interruption"],
         "recovery": ["assignment reconcile observes original execution; assignment observe reads terminal output",
                      "assignment confirm-delivery --evidence TEXT records verified receipt, never resends",

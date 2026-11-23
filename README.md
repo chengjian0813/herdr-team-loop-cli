@@ -93,7 +93,7 @@ flowchart LR
 - 每个 requirement 同时只有一个活动 run，每个 run 的 worker 串行；共享代码仓和声明的测试资源跨 workspace 互斥。
 - worker 报告和独立验收分开。未解决、未核对或未明确处置的 Bug 阻止完成；延期/否决不等于修复通过。
 - 未知投递核对原执行；交接前确认旧进程停止及在途业务结果。进程退出不能证明远端副作用结束。
-- SC 证据的完整性和关联由 CLI 检查，平台事实仍需协调者核对。测试夹具 smoke 不代表真实 agent 或业务 SC E2E 已通过。
+- sc环境证据的完整性和关联由 CLI 检查，平台事实仍需协调者核对。测试夹具 smoke 不代表真实 agent 或业务 sc环境 E2E 已通过。
 - 本机同一 OS 用户下的协作隔离，不提供多租户安全隔离或不可伪造的人类签名。
 
 默认数据根目录为 `$XDG_DATA_HOME/herdr-team-loop-cli`，未设置时为 `~/.local/share/herdr-team-loop-cli`。可用 `--data-dir` 或 `HERDR_TEAM_LOOP_DATA` 覆盖；使用本地磁盘并放在目标代码仓外。

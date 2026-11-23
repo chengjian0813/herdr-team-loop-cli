@@ -36,7 +36,7 @@ herdr-team-loop-cli run start --workspace /actual/workspace \
   --max-rounds 3 --active-minutes 120 --no-progress-limit 2 --json
 ```
 
-report-only 禁止修 Bug，guarded 允许明确且已授权的方案，confirm-every-fix 每项方案需决定。`--resource NAME` 可重复，用于共享 SC 项目、账号和数据集。worker 串行；repo/测试资源锁保留到 run 完成或经核对停止。
+report-only 禁止修 Bug，guarded 允许明确且已授权的方案，confirm-every-fix 每项方案需决定。`--resource NAME` 可重复，用于共享 sc环境项目、账号和数据集。worker 串行；repo/测试资源锁保留到 run 完成或经核对停止。
 
 CLI 默认启动配置的协调者。`--attach-terminal` 用于已存在且与配置匹配的终端。后台终端不承诺自动成为 App 可见 Tab；交互终端可用 `run attach`，JSON 模式仅返回连接信息。
 
@@ -70,7 +70,7 @@ herdr-team-loop-cli --actor "$PM_ID" report accept --report "$REPORT_ID" \
 
 ## 环境证据
 
-SC 等非 local 环境，`run environment --evidence-file` 至少提供：
+sc环境这类非 local 环境，`run environment --evidence-file` 至少提供：
 
 ```json
 {

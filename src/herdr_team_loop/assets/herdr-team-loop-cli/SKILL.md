@@ -19,7 +19,7 @@ description: 使用 herdr-team-loop-cli 初始化 workspace 团队、创建需�
 - 发起 agent 用 `run watch --run ID --after CURSOR --timeout 30 --json` 持续跟进。待决定项展示具体问题、选项、建议与影响，收到明确答复后 `decision resolve` 保存答复和来源。
 - 协调者沿用启动消息的 `--data-dir`、`--actor`，先 `assignment claim/context`，再 `run next` 推进。worker 由 `run dispatch` 创建，不直接 hc 派工。
 - worker 仅执行绑定角色与范围。用 `report submit --file` 回报；fail 列出实际失败的已登记 Bug，pass 列出**实际复测通过的 Bug ID**，保留未覆盖项。提交后不重做副作用。
-- 协调者先 `report show` 核对实际证据，再 `report accept --rationale`。SC 测试前 `run environment --evidence-file` 记录实际部署、源码映射、配置、对象和时间。送达、进程完成、自报 pass 均非业务验收。
+- 协调者先 `report show` 核对实际证据，再 `report accept --rationale`。sc环境测试前 `run environment --evidence-file` 记录实际部署、源码映射、配置、对象和时间。送达、进程完成、自报 pass 均非业务验收。
 
 ## Bug 和决定
 
@@ -38,4 +38,4 @@ description: 使用 herdr-team-loop-cli 初始化 workspace 团队、创建需�
 - 额度或工具故障先保存 checkpoint，必要时 `assignment terminate`；核对在途结果后 `run handoff --operations-checked`。终止进程不等于远端操作回滚。
 - 主控失联先核对旧主控停止调度，再 `run takeover`，保留已有 worker。
 - 补测/输入变更使用 `run resume --revalidate` 连同 checkpoint、操作核对和旧 owner 检查；不新建 run 绕过预算。
-- 无后台 daemon 自动完成业务判断，协调会话中断后须恢复或接管。不将夹具 smoke 宣称为真实 agent 或 SC E2E 通过。
+- 无后台 daemon 自动完成业务判断，协调会话中断后须恢复或接管。不将夹具 smoke 宣称为真实 agent 或 sc环境 E2E 通过。

@@ -51,7 +51,7 @@ class AssignmentService:
                 "实际读取报告后才用 report accept 验收，不能把执行者自报通过当业务通过。"
                 "发现Bug用bug create/triage；实质性取舍提交decision，等待用户明确答复。"
                 "实现细节可按既定需求自行决定，业务规则、范围或方案实质变化重新提交决定。"
-                "在SC测试前提交实际环境/部署证据；部署必须已有授权。"
+                "在sc环境测试前提交实际环境/部署证据；部署必须已有授权。"
                 "终端和状态由CLI管理，不直接调用hc、不直接写数据库、不另建调度。"
             )
         else:
@@ -65,7 +65,7 @@ class AssignmentService:
         return (
             f"{role}\n工作区：{assignment['cwd']}\n"
             "先读取存在的AGENTS.md/TEAM.md和目标仓规则；项目团队条件不满足时上报阻塞。"
-            "测试工具遵循目标项目约定。不要将SC、某个电脑名称或某个agent品牌当作通用限制。\n"
+            "测试工具遵循目标项目约定。不要将sc环境、某个电脑名称或某个agent品牌当作通用限制。\n"
             f"领取任务：{command} assignment claim --assignment {assignment['id']} --json\n"
             f"查看上下文：{command} assignment context --assignment {assignment['id']} --json\n"
             f"命令协议：{command} protocol --json\n"
